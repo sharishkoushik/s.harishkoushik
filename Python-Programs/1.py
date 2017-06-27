@@ -1,13 +1,11 @@
-class Human:
-    def __init__(self, name, gender):
-        self.name = name
-        self.gender = gender
+import sets
 
-    def perform_math_task(self, operation, *args):
-        print "%s did a math opration and the result is %f" % (self.name, operation(*args))
-
-def add(a, b):
-    return a + b
-
-harish = Human("harish", "male")
-harish.perform_math_task(add, 3, 4)
+magic_chars = sets.Set('abracadabra')
+print "magic_chars is : ", magic_chars
+poppins_chars = sets.Set('supercalifragilisticexpialidocious')
+print "poppins_chars is :", poppins_chars
+print ''.join(magic_chars & poppins_chars)
+x = 'xyxxyy hejyxeh e '
+print '|'+x.strip('he')+'|'
+str1 = ['a','b','c','d','e']
+print '-'.join(str1)

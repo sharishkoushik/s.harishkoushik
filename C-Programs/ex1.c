@@ -23,6 +23,7 @@ int move_largest_to_last(node *);
 int DeleteDuplicates(node *);
 int intersection(node *, node *);
 int nth_node_from_last(node *);
+int new_reverse(node *);
 
 int main()
 {
@@ -30,7 +31,7 @@ int main()
 	int choice;
 	start = NULL, start2 = NULL;
 	start = create_ll(start);
-	printf("Enter choice : ");
+	printf("Enter choice between 0 and 11: ");
 	scanf("%d", &choice);
 	switch(choice)
 	{
@@ -73,6 +74,9 @@ int main()
 		break;
 		case 10:
 		nth_node_from_last(start);
+		break;
+		case 11:
+		new_reverse(start);
 		break;
 		default :
 		printf("Not a valid choice and hence executing the default choice\n");
@@ -414,4 +418,30 @@ int nth_node_from_last(node *start)
 	return 0;
 }
 
-
+int new_reverse(node *start)
+{
+	node *p,*q,*tmp,*tmp_link;
+	p = start, q = start;
+	while(p != NULL)
+	{
+		tmp = p ;
+		tmp_link = p -> link;
+		if(p == start)
+		{
+			p -> link = NULL;
+		}
+		else if (p -> link == NULL)
+		{
+			start = p;
+			p -> link = q;
+			break;
+		}
+		else 
+		{
+			p -> link = q;
+		}
+		q = p;
+		p = tmp_link;
+	}
+	display_ll(start);
+}

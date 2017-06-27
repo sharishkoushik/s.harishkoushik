@@ -114,9 +114,3 @@ int dequeue(queue *q1)
 	free(tmp);
 	return x;
 }
-
-
-
- 
-
-
